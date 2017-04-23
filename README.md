@@ -1,2 +1,2 @@
 # Openshift_RedHat_sht
-consolidation of RedHat OpenShift projects
+consolidation of RedHat OpenShift sh*t

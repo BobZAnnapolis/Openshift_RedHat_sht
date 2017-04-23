@@ -1,0 +1,46 @@
+WEB
+===
+diy-0.1             Do-It-Yourself 0.1                   web
+jbossews-1.0        Tomcat-6                             web
+jbossews-2.0        Tomcat-7                             web
+jenkins-1           Jenkins Server                       web
+nodejs-0.10         Node.js 0.10                         web
+perl-5.10           Perl 5.10                            web
+php-5.3             PHP 5.3                              web
+php-5.4             PHP 5.4                              web
+python-2.6          Python 2.6                           web
+python-2.7          Python 2.7                           web
+python-3.3          Python 3.3                           web
+ruby-1.8            Ruby 1.8                             web
+ruby-1.9            Ruby 1.9                             web
+ruby-2.0            Ruby 2.0                             web
+
+ADDONs
+======
+jenkins-client-1    Jenkins Client                       addon
+cron-1.4            Cron 1.4                             addon
+haproxy-1.4         Web Load Balancer                    addon
+mongodb-2.4         MongoDB 2.4                          addon
+10gen-mms-agent-0.1 10gen Mongo Monitoring Service Agent addon
+mysql-5.1           MySQL 5.1                            addon
+mysql-5.5           MySQL 5.5                            addon
+phpmyadmin-4        phpMyAdmin 4.0                       addon
+postgresql-8.4      PostgreSQL 8.4                       addon
+postgresql-9.2      PostgreSQL 9.2                       addon
+
+
+RULES
+=====
+- must have only 1 Jenkins server app per domain
+    - cannot be scaled
+- diy apps can NOT be scaled
+- must have only 1 WEB cartridge per app
+- jenkins-client can only be added if a Jenkins server app exists
+- 10gen-mms-agent-0.1 can only be added if mongodb has been added
+    - 10gen not working - exclude
+- phpmyadmin can only be added if mysql has been added
+- XPAAS sized gears can ONLY contain JBOSSEWS-1/2.0 apps
+- only 1 mysql db per app
+- only 1 postgresql db per app
+- haproxy-1.4 CANNOT Be listed a cartridge during app creation time
+    - its presence means you can build scaled apps but use the --scaling command line option to do that
